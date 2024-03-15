@@ -4,11 +4,15 @@ import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Button from '@mui/material/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const noti = withReactContent(Swal)
 
 
-function App() {
+function Empleados() {
 
 const [nombre,setNombre] = useState("");
 const [edad,setEdad] = useState();
@@ -129,6 +133,13 @@ useEffect(() => {
 
   return (
     <div className="container">
+      <div className="mt-3">
+        <div className="d-flex justify-content-end mb-3">
+          <Button variant="contained" color="info" href="/">
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </Button>
+        </div>
+      </div>
       <div className="card text-center">
         <div className="card-header">
           GESTION DE EMPLEADOS
@@ -235,4 +246,4 @@ useEffect(() => {
   );
 }
 
-export default App;
+export default Empleados;
