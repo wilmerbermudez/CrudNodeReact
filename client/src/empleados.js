@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 
 const noti = withReactContent(Swal)
@@ -126,6 +126,11 @@ const getEmpleados = ()=>{
   });
 }
 
+  const logout = (e) => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  }
+
 useEffect(() => {
   getEmpleados();
 }, []);
@@ -135,8 +140,8 @@ useEffect(() => {
     <div className="container">
       <div className="mt-3">
         <div className="d-flex justify-content-end mb-3">
-          <Button variant="contained" color="info" href="/">
-            <FontAwesomeIcon icon={faArrowLeft} />
+          <Button variant="contained" color="info" onClick={logout}>
+          <FontAwesomeIcon icon={faRightFromBracket} />
           </Button>
         </div>
       </div>

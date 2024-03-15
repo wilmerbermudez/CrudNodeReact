@@ -18,7 +18,7 @@ import {
     {
         path: "/empleados",
         element:  <Empleados />,
-      },
+    },
   ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
